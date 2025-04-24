@@ -1,4 +1,3 @@
 case class Matrix(s: String):
-   private val m = s.split("\n").map(_.split(" ").map(_.toInt).toVector).toVector
-   def row(r: Int): Seq[Int] = m(r)
-   def column(c: Int): Seq[Int] = m.map(_(c))
+   val row: Array[Array[Int]] = s.split("\n").map(_.split("\\s").map(_.toInt))
+   val column: Array[Array[Int]] = row.transpose
